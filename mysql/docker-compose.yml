@@ -1,0 +1,19 @@
+# Use root/example as user/password credentials
+
+version: '3.1'
+
+services:
+    testdb_mysql:
+        image: testdb_mysql
+        restart: always
+        command: --default-authentication-plugin=mysql_native_password --local-infile --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        environment:
+            MYSQL_ROOT_PASSWORD: example
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            LANG: C.UTF-8 # sets the encoding in the init.db scripts which are otherwise assumed to be ascii
+        ports:
+            - 3306:3306
+        container_name: allos_test_mysql
+        volumes:
+          - /tmp:/tmp
