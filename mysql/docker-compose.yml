@@ -14,6 +14,6 @@ services:
             LANG: C.UTF-8 # sets the encoding in the init.db scripts which are otherwise assumed to be ascii
         ports:
             - 3306:3306
-        container_name: allos_test_mysql
+        container_name: testdb_mysql
         volumes:
           - /tmp:/tmp
