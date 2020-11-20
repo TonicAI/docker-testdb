@@ -69,3 +69,5 @@ CREATE TABLE `users` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-11-18 23:25:45
+
+GRANT ALL ON test_data.* TO 'user';
